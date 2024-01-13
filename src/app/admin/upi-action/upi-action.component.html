@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="col-md-8 cen1">
+
+
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+            <div>
+                <h5 class="text-center section-titles">Change Upi Action</h5>
+
+
+                <h6 *ngIf="currentStatus == true" class="text-center">Current status is : Enable</h6>
+                <h6 *ngIf="currentStatus == false" class="text-center">Current status is : Disable</h6>
+                <!-- <h6 *ngIf="currentStatus == null" class="text-center">Current status is : Nothing</h6> -->
+
+                <mat-form-field style="margin-top: 20px;" class="full-width text-center" appearance="outline">
+                    <mat-label>Select Action Upi</mat-label>
+                    <mat-select [(ngModel)]="upiActionAdmin.upiAction" name="upiAction">
+                        <mat-option value="true">Enable</mat-option>
+                        <mat-option value="false">Disable</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
+
+
+                <button class="btn mt-3" (click)="changeUpiAction()">Update-Upi-Action</button>
+
+            </div>
+        </mat-card>
+    </div>
+</div>

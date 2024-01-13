@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="col-md-8 cen">
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+            <h5 class="text-center section-titles">Reports</h5>
+
+            <form style="margin-top: 20px;" autocomplete=" off" (ngSubmit)="getReport()">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-select [(value)]="report" required="true" name="report" [(ngModel)]="report">
+
+                        <mat-option value="1">Deposites-UPI</mat-option>
+                        <mat-option value="2">Deposites-Internet-Banking</mat-option>
+
+                        <mat-option value="3">Withdrawl-Internet Banking</mat-option>
+                        <mat-option value="4">Withdrawl-UPI</mat-option>
+
+                        <mat-option value="5">Levelwise-Investment</mat-option>
+                        <mat-option value="6">Referral-Report</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+                <!-- <button class="btn btn-primary m-3">Download</button> -->
+                <button class="btn btn-primary m-3">Submit</button>
+            </form>
+
+        </mat-card>
+    </div>
+</div>

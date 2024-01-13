@@ -1,0 +1,13 @@
+.images {
+    width: 80vh;
+    height: 50vh;
+}
+
+mat-card {
+    margin-top: 10px;
+
+}
+
+button {
+    margin: 5px;
+}

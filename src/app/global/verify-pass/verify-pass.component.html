@@ -1,0 +1,32 @@
+<div class="wrapper" style="overflow: hidden;">
+    <div class="logo">
+        <img src="/assets/LOGO1.png" alt="">
+    </div>
+    <form class="p-3 mt-3" autocomplete="off">
+
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Enter Password</mat-label>
+            <input required [(ngModel)]="password" #name="ngModel" name="password" matInput placeholder="Enter here">
+
+
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Re-enter Password</mat-label>
+            <input [(ngModel)]="pass" required name="pass" matInput placeholder="Enter here">
+
+
+        </mat-form-field>
+
+        <!--Password-->
+
+        <button class="btn mt-3" (click)="changePassword()">Change-Password</button>
+
+
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="/register">Sign up</a>
+    </div>
+
+
+</div>

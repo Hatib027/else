@@ -1,0 +1,46 @@
+.full-width {
+    width: 100%;
+}
+
+
+
+body {
+    background: #ecf0f3;
+}
+
+h5.section-titles {
+    text-shadow: 1px -1px 0 rgba(255, 255, 255, .5), 1px 1px 0 rgba(0, 0, 0, .25), 3px 3px 3px rgba(0, 0, 0, .25), 10px 10px 20px rgb(0 0 0 / 26%), 20px 40px 40px rgb(0 0 0 / 0%);
+    color: #00283a;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+
+.cen {
+    justify-content: center;
+    margin: auto;
+}
+
+.cen1 {
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+button {
+    margin: 5px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    h5.section-titles {
+
+        font-size: 0.6em;
+        font-weight: 700;
+
+    }
+}

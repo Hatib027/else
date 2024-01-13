@@ -1,0 +1,133 @@
+<div class="container">
+
+    <div class="col-md-12">
+
+
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);background: #03a8f4;">
+
+
+            <h5 class="text-center text section-titles">Welcome To Bricks-Funds</h5>
+
+
+        </mat-card>
+
+
+        <div class="card" style="margin-top: 15px; box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+            <h2 class="text-center section-titles1" style="background-color: white;  height: 50px;">
+                Hey {{loginService.getUser().username}} What's Going On !! Want To Earn More??</h2>
+
+
+            <div *ngIf="investmentMaster">
+                <h4 *ngIf="investmentMaster.level" class="section-titles1 text-center">Level :
+                    {{investmentMaster.level}}
+                </h4>
+                <h4 *ngIf="investmentMaster.currentInvestment" class="section-titles1 text-center">Current-Investment :
+                    {{investmentMaster.currentInvestment}}$</h4>
+                <h4 *ngIf="investmentMaster.totalInvestment" class="section-titles1 text-center">Total-Investment :
+                    {{investmentMaster.totalInvestment}}$</h4>
+
+                <h4 *ngIf="investmentMaster.totalProfit" class="section-titles1 text-center">Total-Profit :
+                    {{investmentMaster.totalProfit}}$</h4>
+
+                <h4 *ngIf="!investmentMaster.level" class="section-titles1 text-center">Level : 0
+                </h4>
+                <h4 *ngIf="!investmentMaster.currentInvestment" class="section-titles1 text-center">Current-Investment :
+                    0 $</h4>
+                <h4 *ngIf="!investmentMaster.totalInvestment" class="section-titles1 text-center">Total-Investment :
+                    0 $</h4>
+                <h4 *ngIf="!investmentMaster.totalProfit" class="section-titles1 text-center">Total-Profit :
+                    0 $</h4>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top sp" src="/assets/Level-Main1.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Level-1</h5>
+                    <p class="card-text">Invest 25$ to 1000$ And Get 150% in 150 Days.
+                    </p>
+                    <p class="card-text">We will provide you 1% return on daily basis.
+                    </p>
+
+                    <a href="#" class="btn btn-primary">Bricks-Funds</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top sp" src="/assets/Level-Main2.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Level-2</h5>
+                    <p class="card-text">Invest 1001$ to 4999$ And Get 150% in 90 Days.</p>
+                    <p class="card-text">We will provide you 1.67% return on daily basis.
+                    </p>
+                    <a href="#" class="btn btn-primary">Bricks-Funds</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/assets/Level-Main-3.png" width="200%" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Level-3</h5>
+                    <p class="card-text">Invest Above 5000$ And Get 150% in 30 Days.</p>
+                    <p class="card-text">We will provide you 5% return on daily basis.
+                    </p>
+                    <a href="#" class="btn btn-primary">Bricks-Funds</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-center text section-titles2" style="margin-top: 20px;">Our Expertise</h4>
+
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="/assets/trading.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Manual-Trading</h5>
+                    <p class="card-text">Manual trading refers to the process of buying and selling financial
+                        instruments,
+                        such as stocks, currencies, or commodities, by a human trader without relying on automated
+                        trading systems or algorithms.
+                        In manual trading, the trader makes decisions based on their analysis of market information,
+                        economic indicators, and other relevant factors.
+                    </p>
+
+
+                    <a href="#" class="btn btn-primary">Bricks-Funds</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="/assets/sj.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">AI-Trading</h5>
+                    <p class="card-text">
+                        AI trading, also known as algorithmic trading or automated trading,
+                        involves the use of artificial intelligence (AI) and sophisticated algorithms to make trading
+                        decisions on financial markets.
+                        This approach leverages computational power to analyze vast amounts of data, execute trades,
+                        and manage portfolios in a more efficient and systematic manner.</p>
+
+                    <a href="#" style="margin-top: 15px;" class="btn btn-primary">Bricks-Funds</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

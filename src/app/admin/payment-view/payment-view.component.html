@@ -1,0 +1,88 @@
+<div class="container">
+    <h1> Details</h1>
+    <div class="row">
+
+        <div class="col-md-4">
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Name</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.userName}} </mat-card-content>
+            </mat-card>
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Amount</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.amount}} $</mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-4">
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+
+                    <h5>Bank Name</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.bankName}} </mat-card-content>
+            </mat-card>
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Account Number</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.accountNumber}} </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-4">
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Date Of Payment</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.dateofrequest}} </mat-card-content>
+            </mat-card>
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>IFSC Code</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.iffcCode}} </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="col-md-12 mt-5">
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Statement</h5>
+                </mat-card-content>
+
+                <img [src]="mysrc" class="img-fluid" alt="Responsive image">
+
+
+                <a download=" {{idData.originalFileName}}" [href]="mysrc" title="ImageName">Download Image</a>
+
+            </mat-card>
+
+        </div>
+
+
+        <!-- <img alt="ImageName" [src]="mysrc"> -->
+
+
+        <div class="col-md-12 ">
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+
+
+                <div class="text-center">
+                    <button class="btn btn-primary" (click)="Accept()">Accept</button>
+
+                    <button class="btn btn-danger" (click)="Reject()">Reject X</button>
+                </div>
+
+
+
+
+            </mat-card>
+        </div>
+
+
+    </div>
+</div>

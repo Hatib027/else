@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="logo">
+            <img src="/assets/LOGO1.png" alt="">
+        </div>
+        <form class="p-3 mt-3" autocomplete="off" (ngSubmit)="addUser()">
+
+
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input required minlength="4" name="username" [(ngModel)]="employee.username" matInput
+                    placeholder="Enter here">
+
+
+            </mat-form-field>
+
+            <!--Password-->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>User Password</mat-label>
+                <input required name="password" type="password" [(ngModel)]="employee.password" matInput
+                    placeholder="Enter here">
+            </mat-form-field>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input required name="firstName" matInput [(ngModel)]="employee.firstName"
+                            placeholder="Enter here">
+                    </mat-form-field>
+                </div>
+                <!--Last name-->
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input required name="lastName" [(ngModel)]="employee.lastName" matInput
+                            placeholder="Enter here">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Referral Code</mat-label>
+                <input name="referralcode" [(ngModel)]="employee.referralcode" matInput placeholder="Enter here">
+            </mat-form-field>
+
+            <!--email-->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input required name="email" [(ngModel)]="employee.email" type="email" matInput
+                    placeholder="Enter here">
+            </mat-form-field>
+
+            <!--Phone number-->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input required maxlength="10" name="phone" [(ngModel)]="employee.phone" minlength="10" type="number"
+                    matInput placeholder="Enter here">
+            </mat-form-field>
+
+
+
+            <button class="btn mt-3" type="submit">Register</button>
+        </form>
+        <div class="text-center fs-6" routerLink="/login">
+            Already have an account !! <a routerLink="/login">Click me</a>
+        </div>
+
+    </div>
+</div>

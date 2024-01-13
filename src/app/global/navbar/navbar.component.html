@@ -1,0 +1,199 @@
+<mat-toolbar class="mat-elevation-z8">
+    <div *ngIf="isLoggedIn">
+        <button mat-icon-button *ngIf="sidenav.mode === 'over' " (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened && isLoggedIn"> menu </mat-icon>
+            <mat-icon *ngIf="sidenav.opened && isLoggedIn "> close </mat-icon>
+        </button>
+    </div>
+    <img *ngIf="isLoggedIn" src="/assets/1.png" class="logo" height="160px" width="150px" alt="">
+
+
+    <img *ngIf="!isLoggedIn" src="/assets/1.png" class="logo1" height="160px" width="150px" alt="">
+    <span class="example-spacer"></span>
+
+
+
+
+    <a *ngIf="isLoggedIn" (click)="logOut()" mat-icon-button class="example-icon"
+        aria-label="Example icon-button with share icon">
+        Logout
+    </a>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" style="max-height: 100vh" class="mat-elevation-z8">
+
+        <div *ngIf="isLoggedIn">
+            <img class="avatar mat-elevation-z8"
+                src="https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png" />
+
+            <h4 class="name">{{loginService.getUser().username}}</h4>
+
+            <mat-divider></mat-divider>
+
+            <div *ngIf="role == 'NORMAL'">
+
+
+                <mat-nav-list>
+
+                    <mat-list-item class="jod" routerLink="">
+                        <mat-icon>dashboard</mat-icon><span>Home</span>
+                    </mat-list-item>
+
+
+
+                    <mat-list-item class="jod" routerLink="/event-details">
+                        <mat-icon>language</mat-icon><span>Event</span>
+                    </mat-list-item>
+
+                    <mat-list-item class="jod" routerLink="/offer-details">
+                        <mat-icon>card_giftcard</mat-icon><span>Offers</span>
+                    </mat-list-item>
+
+
+
+                    <mat-expansion-panel [class.mat-elevation-z0]="true">
+                        <mat-expansion-panel-header class="header">
+                            <mat-icon> next_week </mat-icon>
+                            <span style="margin-top: 2px;margin-left: 3px;">Referral
+                            </span>
+                        </mat-expansion-panel-header>
+
+                        <mat-nav-list>
+                            <a mat-list-item routerLink="/refer">
+                                <mat-icon>verified_user</mat-icon><span>User-Referral</span>
+                            </a>
+                            <a mat-list-item routerLink="/refer-earning">
+                                <mat-icon>group</mat-icon>
+                                <span>Refer-Earning</span>
+                            </a>
+
+
+
+
+
+                        </mat-nav-list>
+
+
+
+
+                    </mat-expansion-panel>
+                </mat-nav-list>
+
+
+                <mat-expansion-panel [class.mat-elevation-z0]="true">
+                    <mat-expansion-panel-header class="header">
+                        <mat-icon>person</mat-icon><span style="margin-top: 2px;margin-left: 3px;">Deposit
+                            Master</span>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLink="payment-home">
+                            <mat-icon>verified_user</mat-icon><span>Deposit=Details</span>
+                        </a>
+
+                    </mat-nav-list>
+
+                </mat-expansion-panel>
+
+                <mat-expansion-panel [class.mat-elevation-z0]="true">
+                    <mat-expansion-panel-header class="header">
+                        <mat-icon>account_balance_wallet</mat-icon><span
+                            style="margin-top: 2px;margin-left: 3px;">Withdrawl
+                            Master</span>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLink="withdrawl-details">
+                            <mat-icon>credit_card</mat-icon><span>Withdrawl-Details</span>
+                        </a>
+                    </mat-nav-list>
+
+                </mat-expansion-panel>
+
+
+            </div>
+
+
+            <!----Admin -->
+
+
+            <div *ngIf="role">
+                <div *ngIf="role != 'NORMAL'">
+
+
+
+                    <mat-nav-list>
+
+                        <mat-list-item class="jod" routerLink="/admin">
+                            <mat-icon>dashboard</mat-icon><span>Dashboard</span>
+                        </mat-list-item>
+
+                        <mat-expansion-panel [class.mat-elevation-z0]="true">
+                            <mat-expansion-panel-header class="header">
+                                <mat-icon>person</mat-icon><span style="margin-top: 2px;margin-left: 3px;">User
+                                    Master</span>
+                            </mat-expansion-panel-header>
+                            <mat-nav-list>
+                                <a mat-list-item routerLink="/admin/user-list">
+                                    <mat-icon>verified_user</mat-icon><span>User-Details</span>
+                                </a>
+
+
+                            </mat-nav-list>
+
+                        </mat-expansion-panel>
+                        <mat-expansion-panel [class.mat-elevation-z0]="true">
+                            <mat-expansion-panel-header class="header">
+                                <mat-icon>person</mat-icon><span style="margin-top: 2px;margin-left: 3px;">Deposit-
+                                    Master</span>
+                            </mat-expansion-panel-header>
+                            <mat-nav-list>
+                                <a mat-list-item routerLink="admin/payment-list">
+                                    <mat-icon>verified_user</mat-icon><span>Deposit-Details</span>
+                                </a>
+
+
+                            </mat-nav-list>
+
+                        </mat-expansion-panel>
+
+                        <mat-list-item class="jod" routerLink="/admin/add-bank-admin">
+                            <mat-icon>polymer icon</mat-icon><span>Admin-Bank-Details</span>
+                        </mat-list-item>
+
+                        <mat-list-item class="jod" routerLink="/admin/refer-percentage">
+                            <mat-icon>swap_horiz</mat-icon><span>Refer-Percentage-Details</span>
+                        </mat-list-item>
+
+                        <mat-list-item class="jod" routerLink="/admin/upi-action">
+                            <mat-icon>timeline</mat-icon><span>Upi-Action-Admin</span>
+                        </mat-list-item>
+
+                        <mat-list-item class="jod" routerLink="/admin/withdrawl-list">
+                            <mat-icon>account_balance_wallet</mat-icon><span>Withdrawl-Details</span>
+                        </mat-list-item>
+
+
+                    </mat-nav-list>
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- mat-elevation-z8 -->
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div *ngIf="isLoggedIn" class="content">
+            <router-outlet></router-outlet>
+        </div>
+        <div *ngIf="!isLoggedIn" class="text-center">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

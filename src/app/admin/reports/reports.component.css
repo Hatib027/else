@@ -1,0 +1,27 @@
+.full-width {
+    width: 100%;
+}
+
+h5.section-titles {
+    text-shadow: 1px -1px 0 rgba(255, 255, 255, .5), 1px 1px 0 rgba(0, 0, 0, .25), 3px 3px 3px rgba(0, 0, 0, .25), 10px 10px 20px rgb(0 0 0 / 26%), 20px 40px 40px rgb(0 0 0 / 0%);
+    color: #00283a;
+    font-size: 2.3em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cen {
+    justify-content: center;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+    h5.section-titles {
+
+        font-size: 0.8em;
+        font-weight: 600;
+
+    }
+}

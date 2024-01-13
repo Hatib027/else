@@ -1,0 +1,127 @@
+<div class="col-md-8 cen">
+    <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+        <mat-tab-group>
+            <mat-tab label="Internet-Banking">
+                <form style="margin-top: 20px;" autocomplete=" off" (ngSubmit)="withdrawlIb()">
+
+
+
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input required minlength="4" name="userName" matInput [(ngModel)]="widthrawlIb.userName"
+                            disabled="true" placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!--Password-->
+                    <p *ngIf="mainInvestment" style="color: red; margin-left: 5px; font-size: 12px;"> Enter Amount In $
+                        and Your Wallet Amount
+                        is {{mainInvestment}} $</p>
+                    <p *ngIf="!mainInvestment" style="color: red; margin-left: 5px; font-size: 12px;"> Enter Amount In $
+                        and Your Wallet Amount
+                        is 0 $</p>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Enter Amount in $</mat-label>
+                        <input required name="amount" type="number" min="25" [(ngModel)]="widthrawlIb.amount" matInput
+                            placeholder="Enter here">
+
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Holder Name</mat-label>
+                        <input required minlength="4" name="holderName" matInput [(ngModel)]="widthrawlIb.holderName"
+                            placeholder="Enter here">
+                    </mat-form-field>
+
+
+
+
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Select Bank Name</mat-label>
+                        <mat-select required="true" name="bankName" [(ngModel)]="widthrawlIb.bankName">
+                            <mat-option *ngFor="let bank of banks"
+                                value="{{bank.bankname}}">{{bank.bankname}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <!--Last name-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Enter IFSCCode </mat-label>
+                        <input required type="text" name="ifscCode" [(ngModel)]="widthrawlIb.ifscCode" matInput
+                            placeholder="Enter here" [minLength]="11" [maxlength]="11">
+                    </mat-form-field>
+
+
+
+
+
+                    <!--Phone number-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Enter Account Number</mat-label>
+                        <input required maxlength="10" name="accountNumber" [(ngModel)]="widthrawlIb.accountNumber"
+                            minlength="10" type="number" matInput placeholder="Enter here">
+                    </mat-form-field>
+
+
+
+
+                    <button class="btn mt-3">Add-Payment</button>
+                </form>
+
+            </mat-tab>
+            <mat-tab *ngIf="currentStaus == true" label="Upi">
+
+
+                <form style="margin-top: 20px;" autocomplete=" off" (ngSubmit)="withdrawlUPI()">
+
+
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input required minlength="4" name="username" matInput [(ngModel)]="widthrawl.userName"
+                            disabled="true" placeholder="Enter here">
+                    </mat-form-field>
+
+                    <!--Password-->
+                    <p *ngIf="mainInvestment" style="color: red; margin-left: 5px; font-size: 12px;"> Enter Amount In $
+                        and Your Wallet Amount
+                        is {{mainInvestment}} $</p>
+                    <p *ngIf="!mainInvestment" style="color: red; margin-left: 5px; font-size: 12px;"> Enter Amount In $
+                        and Your Wallet Amount
+                        is 0 $</p>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Enter Amount</mat-label>
+                        <input required name="amount" type="number" min="25" [(ngModel)]="widthrawl.amount" matInput
+                            placeholder="Enter here">
+
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Holder Name</mat-label>
+                        <input required minlength="4" name="holderName" matInput [(ngModel)]="widthrawl.holderName"
+                            placeholder="Enter here">
+                    </mat-form-field>
+
+
+
+
+
+                    <!--Last name-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Enter Upi Id </mat-label>
+                        <input required type="text" name="upiId" [(ngModel)]="widthrawl.upiId" matInput
+                            placeholder="Enter here" [minLength]="11" [maxlength]="11">
+                    </mat-form-field>
+
+
+
+
+
+
+
+                    <button class="btn mt-3">Add-Payment</button>
+                </form>
+            </mat-tab>
+
+        </mat-tab-group>
+    </mat-card>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+
+    <div class="col-md-8 cen1">
+
+
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+            <div>
+                <h5 class="text-center section-titles">Change Refer Percentage</h5>
+                <mat-form-field class=" full-width" appearance="outline">
+                    <mat-label>Enter Percentage</mat-label>
+                    <input required type="number" minlength="4" name="percentage"
+                        [(ngModel)]="referPercentage.percentage" min="1" matInput placeholder="Enter here">
+                </mat-form-field>
+
+
+
+                <button class="btn mt-3" (click)="addRefer()">Update-Refer-Percentage</button>
+
+            </div>
+        </mat-card>
+    </div>
+</div>

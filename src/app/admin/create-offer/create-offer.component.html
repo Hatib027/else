@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="col-md-8 cen">
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+            <form style="margin-top: 20px;" autocomplete=" off" (ngSubmit)="offerSubmit()">
+
+
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Offer :</mat-label>
+                    <input required name="offer" matInput [(ngModel)]="offer.offer" placeholder="Enter here">
+                </mat-form-field>
+
+
+
+
+                <mat-form-field class="full-width" appearance="outline">
+
+
+                    <mat-label>Offer-Date</mat-label>
+                    <input matInput [matDatepicker]="picker2" name="date" [(ngModel)]="offer.offerDate"
+                        placeholder="DD/MM/YYYY" required />
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+
+
+                </mat-form-field>
+
+
+
+
+
+                <input type="file" accept="image/*" (change)="onChangeVal($event)" required name="file" />
+                <button class="btn mt-3">Add-Offer</button>
+
+            </form>
+
+
+
+
+        </mat-card>
+    </div>
+</div>

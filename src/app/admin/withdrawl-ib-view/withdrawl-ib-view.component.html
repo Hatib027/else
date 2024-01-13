@@ -1,0 +1,75 @@
+<div class="col-md-8 cen">
+    <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+        <form style="margin-top: 20px;" autocomplete=" off">
+
+
+
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input disabled="true" required minlength="4" name="userName" matInput
+                    [(ngModel)]="widthrawlIb.userName" style="color: black;" disabled="true" placeholder="Enter here">
+            </mat-form-field>
+
+            <!--Password-->
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Amount in $</mat-label>
+                <input disabled="true" required style="color: black;" name="amount" type="number" min="25"
+                    [(ngModel)]="widthrawlIb.amount" matInput placeholder="Enter here">
+
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Holder Name</mat-label>
+                <input disabled="true" required minlength="4" name="holderName" matInput
+                    [(ngModel)]="widthrawlIb.holderName" style="color: black;" placeholder="Enter here">
+            </mat-form-field>
+
+
+
+
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Bank Name</mat-label>
+
+                <input disabled="true" required minlength="4" name="bankName" matInput
+                    [(ngModel)]="widthrawlIb.bankName" style="color: black;" placeholder="Enter here">
+            </mat-form-field>
+
+            <!--Last name-->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>IFSCCode </mat-label>
+                <input disabled="true" required type="text" style="color: black;" name="ifscCode"
+                    [(ngModel)]="widthrawlIb.ifscCode" matInput placeholder="Enter here" [minLength]="11"
+                    [maxlength]="11">
+            </mat-form-field>
+
+
+
+
+
+            <!--Phone number-->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Account Number</mat-label>
+                <input required disabled="true" maxlength="10" name="accountNumber"
+                    [(ngModel)]="widthrawlIb.accountNumber" style="color: black;" minlength="10" type="number" matInput
+                    placeholder="Enter here">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Date</mat-label>
+                <input required disabled="true" maxlength="10" style="color: black;" name="date"
+                    [(ngModel)]="widthrawlIb.date" minlength="10" type="text" matInput placeholder="Enter here">
+            </mat-form-field>
+
+
+
+
+
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="Accept()">Accept</button>
+
+                <button class="btn btn-danger" (click)="Reject()">Reject X</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

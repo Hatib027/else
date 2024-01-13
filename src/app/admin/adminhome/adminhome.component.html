@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 sp">
+
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+                <mat-icon class="icon-display">person</mat-icon>
+
+
+                <h3 *ngIf="data.totalUsers">{{data?.totalUsers}} Users</h3>
+                <h3 *ngIf="!data.totalUsers">0 Users</h3>
+
+            </mat-card>
+        </div>
+
+        <div class="col-md-4 sp">
+
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+                <mat-icon class="icon-display">account_balance</mat-icon>
+
+                <h3 *ngIf="data.totalInvestment">{{data.totalInvestment}} $ Total</h3>
+                <h3 *ngIf="!data.totalInvestment">0 $ Total</h3>
+            </mat-card>
+
+        </div>
+        <div class="col-md-4 sp">
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+                <mat-icon class="icon-display">account_balance_wallet</mat-icon>
+                <h3 *ngIf="data.totalCurrent">{{data.totalCurrent}} $ Live</h3>
+                <h3 *ngIf="!data.totalCurrent">0 $ Live</h3>
+            </mat-card>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 sp" id="link" routerLink="/admin/offer-list">
+
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+                <mat-icon class="icon-display">card_giftcard</mat-icon>
+
+
+                <h3>Edit-Offers</h3>
+
+            </mat-card>
+        </div>
+
+        <div class="col-md-4 sp" id="link" routerLink="/admin/event-list">
+
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+                <mat-icon class="icon-display">event</mat-icon>
+
+                <h3>Edit-Events</h3>
+            </mat-card>
+
+        </div>
+        <div class="col-md-4 sp" routerLink="/admin/report-list" style="cursor: pointer;">
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+                <mat-icon class="icon-display">assignment_turned_in</mat-icon>
+                <h3>Get Report</h3>
+            </mat-card>
+
+        </div>
+
+
+
+    </div>
+</div>

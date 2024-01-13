@@ -1,0 +1,43 @@
+<mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+    <mat-card-header>
+        <h1>Events</h1>
+
+        <button mat-raised-button routerLink="/admin/create-event">Add-New</button>
+    </mat-card-header>
+</mat-card>
+
+
+<div style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+    <div>
+        <table>
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Desc</th>
+                    <th scope="col">location</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let event of events; index as i; ">
+                    <td>{{i+1}}</td>
+                    <td>{{event.events}}</td>
+                    <td>{{event.description}}</td>
+                    <td>{{event.locations}}</td>
+                    <td>{{event.eventDate}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteEvent(event.id)">Delete</button></td>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+</div>

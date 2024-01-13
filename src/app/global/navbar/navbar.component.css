@@ -1,0 +1,160 @@
+/* .tool {
+    background: #6a11cb;
+
+    /* Chrome 10-25, Safari 5.1-6 
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+}
+
+.white {
+    color: #ffff;
+}
+
+.example-spacer {
+    flex: 1 1 auto; 
+
+} */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+mat-toolbar {
+    background: #03A9F4;
+    color: white;
+}
+
+
+
+mat-sidenav {
+    margin: 16px;
+    width: 280px;
+    border-right: none;
+    background: #03A9F4;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+
+
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+
+}
+
+.content {
+
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+
+    padding: 16px;
+
+
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+
+
+}
+
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+
+  
+}
+.menu-button mat-icon {
+    margin-right: 8px;
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+
+    margin-bottom: 0%;
+}
+
+.designation {
+    margin-top: 0%;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 5px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+div.con {
+    text-align: left;
+    border: 1px solid white;
+}
+
+ul.l {
+    display: inline-block;
+    text-align: left;
+    list-style: none;
+    padding-left: 0%;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+mat-expansion-panel-header {
+    padding-bottom: 0%;
+}
+
+mat-expansion-panel {
+    height: 5%;
+    margin-bottom: 7px;
+}
+
+mat-nav-list .jod {
+    border-radius: 4px;
+    background-color: white;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+mat-nav-list .jod mat-icon {
+    margin-left: 10px;
+}
+
+mat-expansion-panel .header {
+    padding-bottom: 0%;
+}
+
+#log {
+    margin-right: 50px;
+}
+
+@media(max-width: 700px) {
+    .logo {
+        width: 130px;
+        height: 130px;
+
+        justify-content: center;
+        margin-left: 25%;
+    }
+}

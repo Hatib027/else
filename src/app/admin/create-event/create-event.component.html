@@ -1,0 +1,53 @@
+<div class="container">
+
+    <div class="col-md-8 cen">
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+            <form style="margin-top: 20px;" autocomplete=" off" (ngSubmit)="eventSubmit()">
+
+
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Event :</mat-label>
+                    <input required name="event" matInput [(ngModel)]="event.events" placeholder="Enter here">
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Description :</mat-label>
+                    <input required name="desc" matInput [(ngModel)]="event.description"
+                        placeholder="Enter Description">
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Location Name</mat-label>
+                    <input required minlength="4" name="holderName" matInput [(ngModel)]="event.locations"
+                        placeholder="Enter here">
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width" appearance="outline">
+
+
+                    <mat-label>Event-Date</mat-label>
+                    <input matInput [matDatepicker]="picker2" name="date" [(ngModel)]="event.eventDate"
+                        placeholder="DD/MM/YYYY" required />
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+
+
+                </mat-form-field>
+
+
+
+
+                <button class="btn mt-3">Add-Event</button>
+            </form>
+
+
+
+
+        </mat-card>
+    </div>
+</div>

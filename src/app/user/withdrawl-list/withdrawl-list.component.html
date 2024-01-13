@@ -1,0 +1,156 @@
+<div class="container">
+    <div class="col-md-12">
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+            <div class="row">
+                <h5 class="text-center text section-titles"><span> Wallet Amount is :
+                        {{(investmentMaster?.currentInvestment + investmentMaster?.referralAmount
+                        +investmentMaster?.totalIntrest).toFixed(3)}} $</span></h5>
+
+            </div>
+
+            <div class="col-md-4 add">
+                <button routerLink="/withdrawl-home" mat-raised-button style="background-color: #03A9F4; color: white;">
+                    Withdraw-Request</button>
+            </div>
+
+            <mat-form-field style="margin-top: 20px;" class="full-width" appearance="outline">
+                <mat-label>Select Payment Method</mat-label>
+                <mat-select [(value)]="selected" name="selected">
+                    <mat-option value="Ib">Internet-Banking</mat-option>
+                    <mat-option value="upi">Upi</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+
+
+
+            <div>
+                <table *ngIf="selected == 'Ib'">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr.no</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Amount in Inr</th>
+                            <th scope="col">Date-Payment</th>
+                            <th scope="col">Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let payIb of ib|paginate : {itemsPerPage : tableSize,currentPage:page,totalItems:count}, let i=index">
+                            <td data-label="Sr.no">{{i+1}}</td>
+                            <td data-label="Username">{{payIb.userName}}</td>
+
+                            <td data-label="Amount">{{payIb.amount}}$</td>
+                            <td data-label="Amount">{{payIb.amount * 80}}Rs.</td>
+                            <td data-label="Date">{{payIb.date}}</td>
+
+                            <td data-label="Status">
+
+                                <button *ngIf="payIb.status == 0" style="background: #03A9F4; color: white;"
+                                    mat-raised-button>
+                                    Requested</button>
+                                <button *ngIf="payIb.status  == 1"
+                                    style="background: green; color: white; width: 100px;" mat-raised-button>
+                                    Added</button>
+                                <button *ngIf="payIb.status  == 2" style="background: red; color: white; width: 100px;"
+                                    mat-raised-button>
+                                    Rejected</button>
+                            </td>
+
+
+
+                        </tr>
+
+
+
+                    </tbody>
+
+                </table>
+                <div *ngIf="selected == 'Ib'" style="margin-left: 46px;" class="mt20">
+
+                    <pagination-controls style="color: #004a9f;" class="my-pagination" previousLabel="Prev"
+                        nextLabel="next" (pageChange)="onTableDataChange($event)">
+
+
+
+                    </pagination-controls>
+
+
+
+                </div>
+            </div>
+
+            <div>
+                <div *ngIf="selected == 'upi'">
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Sr.no</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Amount in Inr</th>
+                                <th scope="col">Date-Payment</th>
+                                <th scope="col">Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let payUpi of upi|paginate : {itemsPerPage : tableSize,currentPage:page,totalItems:count}, let i=index">
+                                <td data-label="Sr.no">{{i+1}}</td>
+                                <td data-label="Username">{{payUpi.userName}}</td>
+
+                                <td data-label="Amount">{{payUpi.amount}}$</td>
+                                <td data-label="Amount">{{payUpi.amount * 80}} Rs.</td>
+                                <td data-label="Date">{{payUpi.date}}</td>
+
+                                <td data-label="Status">
+
+                                    <button *ngIf="payUpi.status == 0" style="background: #03A9F4; color: white;"
+                                        mat-raised-button>
+                                        Requested</button>
+                                    <button *ngIf="payUpi.status == 1"
+                                        style="background: green; color: white; width: 100px;" mat-raised-button>
+                                        Added</button>
+                                    <button *ngIf="payUpi.status == 2"
+                                        style="background: red; color: white; width: 100px;" mat-raised-button>
+                                        Rejected</button>
+                                </td>
+
+
+
+                            </tr>
+
+
+
+                        </tbody>
+
+                    </table>
+                    <div *ngIf="selected == 'upi'" style="margin-left: 46px;" class="mt20">
+
+                        <pagination-controls style="color: #004a9f;" class="my-pagination" previousLabel="Prev"
+                            nextLabel="next" (pageChange)="onTableDataChange($event)">
+
+
+
+                        </pagination-controls>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </mat-card>
+    </div>
+</div>

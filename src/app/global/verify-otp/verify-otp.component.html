@@ -1,0 +1,25 @@
+<div class="wrapper" style="overflow: hidden;">
+    <div class="logo">
+        <img src="/assets/LOGO1.png" alt="">
+    </div>
+    <form class="p-3 mt-3" autocomplete="off" (ngSubmit)="verifyOtp()">
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Otp</mat-label>
+            <input required [(ngModel)]="otp" #name="ngModel" name="otp" matInput placeholder="Enter here">
+
+
+        </mat-form-field>
+
+        <!--Password-->
+
+        <button class="btn mt-3">Verify-Otp</button>
+
+
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="/register">Sign up</a>
+    </div>
+
+
+</div>

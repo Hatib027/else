@@ -1,0 +1,55 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr.no</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Investor</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Date</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let referMaster of referMaster|paginate : {itemsPerPage : tableSize,currentPage:page,totalItems:count}, let i=index">
+                            <td data-label="Sr.no">{{i+1}}</td>
+                            <td data-label="Username">{{referMaster.userRefer.firstName}}</td>
+
+                            <td data-label="Investor">{{referMaster.friendRefer.firstName}}</td>
+                            <td data-label="Amount">{{referMaster.amount}}$</td>
+                            <td data-label="Date">{{referMaster.date}}</td>
+
+                        </tr>
+
+
+
+                    </tbody>
+
+                </table>
+                <div style="margin-left: 46px;" class="mt20">
+
+                    <pagination-controls style="color: #004a9f;" class="my-pagination" previousLabel="Prev"
+                        nextLabel="next" (pageChange)="onTableDataChange($event)">
+
+
+
+                    </pagination-controls>
+
+
+
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+
+</div>

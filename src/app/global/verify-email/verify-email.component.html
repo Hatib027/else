@@ -1,0 +1,26 @@
+<div class="wrapper" style="overflow: hidden;">
+    <div class="logo">
+        <img src="/assets/LOGO1.png" alt="">
+    </div>
+    <form class="p-3 mt-3" autocomplete="off" (ngSubmit)="sendMail()">
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Enter-Email</mat-label>
+            <input required type="email" [(ngModel)]="email" #name="ngModel" name="email" matInput
+                placeholder="Enter here">
+
+
+        </mat-form-field>
+
+        <!--Password-->
+
+        <button class="btn mt-3">Send-Mail</button>
+
+
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="/register">Sign up</a>
+    </div>
+
+
+</div>

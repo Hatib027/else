@@ -1,0 +1,55 @@
+<div class="container">
+
+    <div class="col-md-8 cen1">
+
+
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+            <div *ngIf="butAmg == 'disabled'">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter Security Code</mat-label>
+                    <input required type="number" minlength="4" name="securityCode" [(ngModel)]="securityCodeCheck"
+                        matInput placeholder="Enter here">
+                </mat-form-field>
+
+
+
+                <button class="btn mt-3" (click)="getData()">Verify-SecurityCode</button>
+
+            </div>
+
+            <div *ngIf="butAmg == 'enabled'">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter AccountNumber</mat-label>
+                    <input required minlength="4" type="number" name="accountNumber"
+                        [(ngModel)]="bankAdminDetails.accountNumber" matInput placeholder="Enter here">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter Ifsc Code</mat-label>
+                    <input required type="text" minlength="4" name="ifscCode" [(ngModel)]="bankAdminDetails.ifscCode"
+                        matInput placeholder="Enter here">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter Bank-Holdername Id</mat-label>
+                    <input required type="text" name="accountHoldername"
+                        [(ngModel)]="bankAdminDetails.accountHoldername" matInput placeholder="Enter here">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter Upi Id</mat-label>
+                    <input required type="text" minlength="4" name="upiId" [(ngModel)]="bankAdminDetails.upiId" matInput
+                        placeholder="Enter here">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter Security Code</mat-label>
+                    <input required minlength="4" name="securityCode" type="number"
+                        [(ngModel)]="bankAdminDetails.securityCode" matInput placeholder="Enter here">
+                </mat-form-field>
+
+
+
+                <button class="btn mt-3" (click)="changeBankDetails()">Change-Details</button>
+
+            </div>
+        </mat-card>
+    </div>
+</div>

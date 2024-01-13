@@ -1,0 +1,65 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content class="text-center mr20">
+
+                    <mat-form-field class="mid-width" appearance="outline">
+                        <mat-label>Refer Code</mat-label>
+                        <input disabled type="text" style=" color: black;" [(ngModel)]="value" matInput
+                            placeholder="Enter here">
+
+                    </mat-form-field>
+
+                    <button [cdkCopyToClipboard]="value" mat-raised-button
+                        style="background-color: #03A9F4; color: white;" class="ml20">Copy</button>
+                </mat-card-content>
+
+                <table *ngIf="user != ''">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr.no</th>
+                            <th scope="col">Firstname</th>
+                            <th scope="col">email</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let user of user|paginate : {itemsPerPage : tableSize,currentPage:page,totalItems:count}, let i=index">
+                            <td data-label="Sr.no">{{i+1}}</td>
+                            <td data-label="Username">{{user.firstName}}</td>
+
+                            <td data-label="email">{{user.email}}</td>
+
+                        </tr>
+
+
+
+                    </tbody>
+
+                </table>
+                <div *ngIf="user != ''" style="margin-left: 46px;" class="mt20">
+
+                    <pagination-controls style="color: #004a9f;" class="my-pagination" previousLabel="Prev"
+                        nextLabel="next" (pageChange)="onTableDataChange($event)">
+
+
+
+                    </pagination-controls>
+
+
+
+                </div>
+                <div *ngIf="user ==''" class="text-center">
+                    <h5>No Referral Available !!</h5>
+                    <p>Do Refer Using Your Code And Get More Amount.</p>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+
+</div>

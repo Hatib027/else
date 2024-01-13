@@ -1,0 +1,34 @@
+.full-width {
+    width: 100%;
+}
+
+
+
+body {
+    background: #ecf0f3;
+}
+
+
+
+.btn {
+    box-shadow: none;
+    width: 100%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1,
+        -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+}
+
+.cen {
+    justify-content: center;
+    margin: auto;
+}
+
+.cen1 {
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+}

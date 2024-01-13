@@ -1,0 +1,181 @@
+<div class="container">
+
+    <div class="col-md-8 cen1">
+
+
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+
+            <h5 class="text-center text section-titles">Company Bank-Details</h5>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Account Number</mat-label>
+                <input required minlength="4" style="color: black;" [value]="bankAdminDetails.accountNumber" matInput
+                    disabled="true" placeholder="Enter here">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Account Holder</mat-label>
+                <input required minlength="4" style="color: black;" [value]="bankAdminDetails.accountHoldername"
+                    matInput disabled="true" placeholder="Enter here">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Ifsc Code</mat-label>
+                <input required minlength="4" style="color: black;" [value]="bankAdminDetails.ifscCode" matInput
+                    disabled="true" placeholder="Enter here">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Upi-Id</mat-label>
+                <input required minlength="4" style="color: black;" [value]="bankAdminDetails.upiId" matInput
+                    disabled="true" placeholder="Enter here">
+            </mat-form-field>
+
+
+            <img [src]="mySrc" />
+        </mat-card>
+    </div>
+
+
+
+    <div class="col-md-8 cen">
+        <mat-card style=" box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+            <mat-tab-group>
+                <mat-tab label="Internet-Banking">
+                    <form style="margin-top: 20px;" autocomplete=" off" (ngSubmit)="addPayment()">
+                        <!-- enctype="multipart/form-data" -->
+
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input required minlength="4" name="username" [(ngModel)]="payment.userName" matInput
+                                disabled="true" placeholder="Enter here">
+                        </mat-form-field>
+
+                        <!--Password-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter Amount</mat-label>
+                            <input required name="inramount" type="number" min="2000" (keyup)="changeToDollar()"
+                                [(ngModel)]="inramount" matInput placeholder="Enter here">
+
+                        </mat-form-field>
+                        <p>Amount in $ is :{{payment.amount}} $</p>
+
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+
+
+                            <mat-label>Payment-Date</mat-label>
+                            <input matInput [matDatepicker]="picker2" name="dateofrequest"
+                                [(ngModel)]="payment.dateofrequest" placeholder="DD/MM/YYYY" required readonly
+                                [max]="minDate" />
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+
+
+                        </mat-form-field>
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Select Bank Name</mat-label>
+                            <mat-select required="true" name="bankName" [(ngModel)]="payment.bankName">
+                                <mat-option *ngFor="let bank of banks"
+                                    value="{{bank.bankname}}">{{bank.bankname}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <!--Last name-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter IFSCCode </mat-label>
+                            <input required type="text" name="iffcCode" [(ngModel)]="payment.iffcCode" matInput
+                                placeholder="Enter here" [minLength]="11" [maxlength]="11">
+                        </mat-form-field>
+
+
+
+
+
+                        <!--Phone number-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter Account Number</mat-label>
+                            <input required name="accountNumber" [(ngModel)]="payment.accountNumber" [maxLength]="25"
+                                type="number" matInput placeholder="Enter here">
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Re-enter Account Number</mat-label>
+                            <input required name="accountNumber2" [(ngModel)]="accountNumber2" [maxlength]="25"
+                                type="number" matInput placeholder="Enter here">
+                        </mat-form-field>
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter Remark </mat-label>
+                            <input required type="text" name="remark" [(ngModel)]="payment.remark" matInput
+                                placeholder="Enter here">
+                        </mat-form-field>
+
+                        <input type="file" accept="image/*" (change)="onChangeVal($event)" [required]="true"
+                            name="file" />
+
+
+                        <button class="btn mt-3">Deposit-Request</button>
+                    </form>
+                </mat-tab>
+                <mat-tab label="Upi">
+
+                    <form style="margin-top: 20px;" autocomplete="off" (ngSubmit)="addPaymentofUPI()">
+                        <!-- enctype="multipart/form-data" -->
+
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input required minlength="4" name="username" [(ngModel)]="upi.userName" matInput
+                                disabled="true" placeholder="Enter here">
+                        </mat-form-field>
+
+                        <!--Password-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter Amount</mat-label>
+                            <input required name="inramount1" type="number" min="1999" (keyup)="changeToDollarUPI()"
+                                [(ngModel)]="inramount1" matInput placeholder="Enter here">
+
+                        </mat-form-field>
+                        <p>Amount in $ is :{{upi.amount}} $</p>
+
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+
+
+                            <mat-label>Payment-Date</mat-label>
+                            <input matInput [matDatepicker]="picker" name="dateofrequest"
+                                [(ngModel)]="upi.dateofrequest" placeholder="DD/MM/YYYY" required readonly
+                                [max]="minDate" />
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+
+
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter UPI ID </mat-label>
+                            <input required name="upiId" [(ngModel)]="upi.upiId" matInput placeholder="Enter here">
+                        </mat-form-field>
+
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter Remark </mat-label>
+                            <input required type="text" name="remark" [(ngModel)]="upi.remark" matInput
+                                placeholder="Enter here">
+                        </mat-form-field>
+                        <input type="file" accept="image/*" (change)="onChangeUpi($event)" required name="file" />
+
+
+                        <button class="btn mt-3">Deposit-Request</button>
+                    </form>
+
+                </mat-tab>
+
+            </mat-tab-group>
+        </mat-card>
+    </div>
+</div>

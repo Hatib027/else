@@ -1,0 +1,17 @@
+<div class="container">
+    <h5 class="text-center text section-titles">Events</h5>
+    <div class="row">
+        <mat-card class="col-md-5 card" id="pg" *ngFor="let event of events">
+
+
+            <div>
+                <h4>Event : {{event.events}}</h4>
+                <hr>
+
+                <p>Description : {{event.description}}</p>
+                <p>Location : {{event.locations}}</p>
+                <p>Date: {{event.eventDate}}</p>
+            </div>
+        </mat-card>
+    </div>
+</div>
