@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BnNgIdleService } from 'bn-ng-idle';
 
 @Component({
@@ -6,17 +6,34 @@ import { BnNgIdleService } from 'bn-ng-idle';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'bricksfunds-angular';
-
+export class AppComponent implements OnInit {
+  title = 'bricksfunds';
   constructor(private cdr: ChangeDetectorRef) {
-
-
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
 
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    })
 
+    document.onkeydown = (e) => {
+
+      if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+        e.preventDefault();
+      }
+      if (e.ctrlKey && e.key == 'U') {
+        e.preventDefault();
+      }
+    };
   }
+
+
 
 }

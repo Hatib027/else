@@ -14,7 +14,7 @@ export class EventsDeleteComponent implements OnInit {
   ngOnInit(): void {
     this.eventService.getEvents().subscribe((data) => {
       this.events = data;
-      console.log(data)
+      // console.log(data)
     }
       ,
       (error: any) => {
@@ -30,7 +30,7 @@ export class EventsDeleteComponent implements OnInit {
   }
 
   deleteEvent(id: number) {
-    console.log(id);
+    // console.log(id);
     this.eventService.deleteEvent(id).subscribe((data) => {
       this.events = this.events.filter((events: any) =>
         events.id != id

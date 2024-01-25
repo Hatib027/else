@@ -22,16 +22,15 @@ export class ReferHomeComponent implements OnInit {
   tableSize: number = 6;
   tableSizes: any = [5, 10, 15, 20];
 
+  text: any;
   value: any;
   ngOnInit(): void {
 
-    this.value = this.loginService.getUser().yourrefercode;
-    this.referService.getYourRefer(this.value).subscribe(
+    this.value = "https://bricksfunds.web.app/register" + "         Referral Code Is " + this.loginService.getUser().yourrefercode;
+    this.text = this.loginService.getUser().yourrefercode;
+    this.referService.getYourRefer(this.text).subscribe(
       (data) => {
-
         this.user = data;
-
-
       },
       (error) => {
 
@@ -55,5 +54,4 @@ export class ReferHomeComponent implements OnInit {
     this.page = 1;
     this.user;
   }
-
 }

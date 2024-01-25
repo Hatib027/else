@@ -32,10 +32,6 @@
                             placeholder="Enter here">
                     </mat-form-field>
 
-
-
-
-
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Select Bank Name</mat-label>
                         <mat-select required="true" name="bankName" [(ngModel)]="widthrawlIb.bankName">
@@ -60,6 +56,11 @@
                         <mat-label>Enter Account Number</mat-label>
                         <input required maxlength="10" name="accountNumber" [(ngModel)]="widthrawlIb.accountNumber"
                             minlength="10" type="number" matInput placeholder="Enter here">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Re-enter Account Number</mat-label>
+                        <input required name="accountNumber2" [(ngModel)]="accountNumber2" [maxlength]="25"
+                            type="number" matInput placeholder="Enter here">
                     </mat-form-field>
 
 

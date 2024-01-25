@@ -18,14 +18,12 @@
                     [(ngModel)]="widthrawl.amount" matInput placeholder="Enter here">
 
             </mat-form-field>
+            <p>{{(widthrawl.amount * 80).toFixed(3)}}</p>
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Holder Name</mat-label>
                 <input required disabled="true" style="color: black;" minlength="4" name="holderName" matInput
                     [(ngModel)]="widthrawl.holderName" placeholder="Enter here">
             </mat-form-field>
-
-
-
             <!--Last name-->
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Upi Id </mat-label>

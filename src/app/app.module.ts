@@ -70,6 +70,8 @@ import { OffersDeleteComponent } from './admin/offers-delete/offers-delete.compo
 import { ReportsComponent } from './admin/reports/reports.component';
 import { OfferComponent } from './user/offer/offer.component';
 import { EventsComponent } from './user/events/events.component';
+import { SliderComponent } from './global/slider/slider.component';
+import { HomeComponent } from './global/home/home.component';
 
 
 @NgModule({
@@ -105,7 +107,9 @@ import { EventsComponent } from './user/events/events.component';
     OffersDeleteComponent,
     ReportsComponent,
     OfferComponent,
-    EventsComponent
+    EventsComponent,
+    SliderComponent,
+    HomeComponent
 
   ],
   imports: [

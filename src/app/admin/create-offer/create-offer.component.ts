@@ -30,7 +30,7 @@ export class CreateOfferComponent implements OnInit {
       this.offer.offerDate == '' || this.offer.offerDate == null
 
     ) {
-      console.log(this.offer);
+      // console.log(this.offer);
       this.snack.open("All  fields are required !!", 'Ok', {
         duration: 3000,
       });

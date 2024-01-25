@@ -35,13 +35,14 @@ import { CreateEventComponent } from './admin/create-event/create-event.componen
 import { ReportsComponent } from './admin/reports/reports.component';
 import { EventsComponent } from './user/events/events.component';
 import { OfferComponent } from './user/offer/offer.component';
+import { SliderComponent } from './global/slider/slider.component';
+import { HomeComponent } from './global/home/home.component';
 
 const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
     pathMatch: "full"
-
   },
   {
     path: 'verify-email',
@@ -188,9 +189,13 @@ const routes: Routes = [
     canActivate: [AdminGuardGuard]
   },
   {
-    path: '',
+    path: 'user-home',
     component: UserhomeComponent,
     canActivate: [UserGuardGuard],
+  },
+  {
+    path: '',
+    component: HomeComponent
   }
 ];
 
@@ -198,4 +203,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  
+ }

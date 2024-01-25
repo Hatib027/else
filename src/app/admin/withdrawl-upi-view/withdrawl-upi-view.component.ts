@@ -40,7 +40,7 @@ export class WithdrawlUpiViewComponent implements OnInit {
         this.widthrawl = data;
         this.widthrawlService.getUserInvestByUsername(this.widthrawl.userName).subscribe(
           (data: any) => {
-            console.log(data);
+            // console.log(data);
 
             this.investmentMaster = data;
             this.totalAmount = this.investmentMaster.currentInvestment + this.investmentMaster.referralAmount + this.investmentMaster.currentProfit;

@@ -14,7 +14,9 @@ import Swal from 'sweetalert2';
 export class WithdrawHomeComponent implements OnInit {
   banks: any;
   constructor(private loginService: LoginService, private snack: MatSnackBar,
-    private paymentService: PaymentServiceService, private widthrawlService: WithdrawlService, private router: Router) { }
+    private paymentService: PaymentServiceService, private widthrawlService: WithdrawlService, private router: Router) {
+    // console.log(this.router.url);
+  }
 
   widthrawl = {
     userName: this.loginService.getUser().username,
@@ -28,6 +30,7 @@ export class WithdrawHomeComponent implements OnInit {
     referralAmount: 0
   };
 
+  accountNumber2: any;
   mainInvestment: number = 0;
   upiActionAdmin: any;
 
@@ -109,7 +112,7 @@ export class WithdrawHomeComponent implements OnInit {
 
 
     ) {
-      console.log(this.widthrawl)
+      // console.log(this.widthrawl)
       this.snack.open("All  fields are required !!", 'Ok', {
         duration: 3000,
       });
@@ -163,7 +166,7 @@ export class WithdrawHomeComponent implements OnInit {
 
 
     ) {
-      console.log(this.widthrawl)
+      // console.log(this.widthrawl)
       this.snack.open("All  fields are required !!", 'Ok', {
         duration: 3000,
       });
@@ -183,6 +186,12 @@ export class WithdrawHomeComponent implements OnInit {
     else if (this.widthrawlIb.amount < 25) {
 
       this.snack.open("minimum input amount is 25 $ !!", 'Ok', {
+        duration: 3000,
+      });
+    }
+    else if (this.widthrawlIb.accountNumber != this.accountNumber2) {
+
+      this.snack.open("Both Account Number Not Match !!", 'Ok', {
         duration: 3000,
       });
     } else {

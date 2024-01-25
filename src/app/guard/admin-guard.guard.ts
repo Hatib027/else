@@ -25,10 +25,8 @@ export class AdminGuardGuard implements CanActivate {
         'Unauthorized Content',
         'question'
       )
-      this.router.navigate(['user-dashboard']);
-
+      this.router.navigate(['user-home']);
     }
-
     else {
       this.router.navigate(['login']);
     }

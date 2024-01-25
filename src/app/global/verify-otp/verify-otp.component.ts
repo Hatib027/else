@@ -36,7 +36,7 @@ export class VerifyOtpComponent implements OnInit {
         this.router.navigate(['/login']);
       },
       (error) => {
-        console.log(error);
+        // console.log(error);
 
         Swal.fire({
           icon: "error",

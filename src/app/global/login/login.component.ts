@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginDetails.username = '';
   }
+
+
+  hide = true;
+
   loginSubmit() {
 
     if (this.loginDetails.username.trim() == '' || this.loginDetails.username == '') {
@@ -64,11 +68,12 @@ export class LoginComponent implements OnInit {
             } else if (this.loginService.getUserRole() == 'NORMAL') {
 
               // window.location.href = '/user-dashboard'
-              window.location.href = '/';
+              window.location.href = '/user-home';
               this.loginService.loginStatus.next(true);
               //normal user dash board
 
             } else {
+
               this.loginService.logout();
 
             }
@@ -83,7 +88,6 @@ export class LoginComponent implements OnInit {
       },
       (error: any) => {
 
-        console.log(error);
         this.snackBar.open("Invalid Detail !! Try Again", '', {
           duration: 3000
         });

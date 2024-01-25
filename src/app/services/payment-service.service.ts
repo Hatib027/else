@@ -14,7 +14,7 @@ export class PaymentServiceService {
 
   public addProduct(payment: any): Observable<any> {
 
-    console.log("sj");
+    // console.log("sj");
     const headers = new HttpHeaders({
       'Content-Type': 'multipart/form-data',
     });
@@ -46,7 +46,7 @@ export class PaymentServiceService {
 
   public addPaymentUpi(paymentupi: any): Observable<any> {
 
-    console.log("sj");
+    // console.log("sj");
     const headers = new HttpHeaders({
       'Content-Type': 'multipart/form-data',
     });

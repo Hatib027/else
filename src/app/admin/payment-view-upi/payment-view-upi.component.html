@@ -26,10 +26,11 @@
             </mat-card>
             <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
                 <mat-card-content>
-                    <h5>UPI ID Code</h5>
+                    <h5>Amount In Inr</h5>
                 </mat-card-content>
-                <mat-card-content>{{idData.upiId}} </mat-card-content>
+                <mat-card-content>{{(idData?.amount * 80).toFixed(3)}} Inr</mat-card-content>
             </mat-card>
+
         </div>
         <div class="col-md-4">
             <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
@@ -37,6 +38,12 @@
                     <h5>Date Of Request</h5>
                 </mat-card-content>
                 <mat-card-content>{{idData.dateofrequest}} </mat-card-content>
+            </mat-card>
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>UPI ID Code</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData.upiId}} </mat-card-content>
             </mat-card>
 
         </div>

@@ -42,7 +42,7 @@ export class WithdrawlService {
   }
 
   public getUserInvestByUsername(username: any) {
-    console.log(username);
+    // console.log(username);
 
     return this.httpClient.post(`${baseUrl}/admin/getInvestmentData`, { "username": username });
   }

@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   }
   // emial ki length badha de ke min 
 
+  hide = true;
   public addUser() {
 
     if (this.employee.username == '' || this.employee.username == null || this.employee.password.trim() == '' || this.employee.password == null || this.employee.email.trim() == '' || this.employee.email == null || this.employee.firstName.trim() == '' || this.employee.firstName == null || this.employee.lastName.trim() == '' || this.employee.lastName == null || this.employee.phone == null || this.employee.referralcode.trim() == '' || this.employee.referralcode == null) {

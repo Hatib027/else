@@ -15,6 +15,14 @@
                 </mat-card-content>
                 <mat-card-content>{{idData?.amount}} $</mat-card-content>
             </mat-card>
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Account Number</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.accountNumber}} </mat-card-content>
+            </mat-card>
+
+
         </div>
         <div class="col-md-4">
             <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
@@ -26,24 +34,29 @@
             </mat-card>
             <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
                 <mat-card-content>
-                    <h5>Account Number</h5>
+                    <h5>Amount In Inr</h5>
                 </mat-card-content>
-                <mat-card-content>{{idData?.accountNumber}} </mat-card-content>
+                <mat-card-content>{{(idData?.amount * 80).toFixed(3)}} INR</mat-card-content>
             </mat-card>
+
+
+
         </div>
         <div class="col-md-4">
-            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
-                <mat-card-content>
-                    <h5>Date Of Payment</h5>
-                </mat-card-content>
-                <mat-card-content>{{idData?.dateofrequest}} </mat-card-content>
-            </mat-card>
             <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
                 <mat-card-content>
                     <h5>IFSC Code</h5>
                 </mat-card-content>
                 <mat-card-content>{{idData?.iffcCode}} </mat-card-content>
             </mat-card>
+            <mat-card style="  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.5);">
+                <mat-card-content>
+                    <h5>Date Of Payment</h5>
+                </mat-card-content>
+                <mat-card-content>{{idData?.dateofrequest}} </mat-card-content>
+            </mat-card>
+
+
         </div>
 
         <div class="col-md-12 mt-5">

@@ -30,7 +30,7 @@ export class CreateEventComponent implements OnInit {
       this.event.eventDate == '' || this.event.eventDate == null
 
     ) {
-      console.log(this.event);
+      // console.log(this.event);
       this.snack.open("All  fields are required !!", 'Ok', {
         duration: 3000,
       });

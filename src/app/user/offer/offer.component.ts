@@ -21,11 +21,11 @@ export class OfferComponent implements OnInit {
       this.offers = data;
       for (let x = 0; x < this.offers.length; x++) {
         let base64 = this.offers[x].image;
-        console.log(base64);
+        // console.log(base64);
         this.mysrc = this.domSenatizer.bypassSecurityTrustUrl('data:image/png/jpg;base64,' + base64);
         this.offers[x].image = this.mysrc;
       }
-      console.log(this.offers)
+      // console.log(this.offers)
     }
       , (error) => {
         window.location.reload();

@@ -31,7 +31,7 @@ export class LoginGuard implements CanActivate {
         'Already Logged In Please Logout Redirect Login Page',
         'question'
       )
-      this.router.navigate(['user-dashboard']);
+      this.router.navigate(['user-home']);
 
     }
 

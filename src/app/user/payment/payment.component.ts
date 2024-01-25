@@ -120,7 +120,7 @@ export class PaymentComponent implements OnInit {
       this.upi.dateofrequest == '' || this.upi.dateofrequest == null
 
     ) {
-      console.log(this.upi)
+      // console.log(this.upi)
       this.snack.open("All  fields are required !!", 'Ok', {
         duration: 3000,
       });
@@ -261,7 +261,7 @@ export class PaymentComponent implements OnInit {
   }
 
   changeToDollar() {
-    console.log("ss");
+    // console.log("ss");
 
     this.payment.amount = this.inramount / 80;
   }

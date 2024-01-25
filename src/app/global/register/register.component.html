@@ -18,8 +18,11 @@
             <!--Password-->
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>User Password</mat-label>
-                <input required name="password" type="password" [(ngModel)]="employee.password" matInput
-                    placeholder="Enter here">
+                <input required name="password" [type]="hide ? 'password' : 'text'" type="password"
+                    [(ngModel)]="employee.password" matInput placeholder="Enter here">
+                <mat-icon style="font-size: 12px;margin-bottom: 15px;" matSuffix (click)="hide = !hide">{{hide ? 'show'
+                    :
+                    'hide'}}</mat-icon>
             </mat-form-field>
             <div class="row">
                 <div class="col-md-6">
