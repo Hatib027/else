@@ -26,7 +26,7 @@ export class ReferHomeComponent implements OnInit {
   value: any;
   ngOnInit(): void {
 
-    this.value = "https://bricksfunds.web.app/register" + "         Referral Code Is " + this.loginService.getUser().yourrefercode;
+    this.value = "https://bricksfunds.in/register" + "         Referral Code Is " + this.loginService.getUser().yourrefercode;
     this.text = this.loginService.getUser().yourrefercode;
     this.referService.getYourRefer(this.text).subscribe(
       (data) => {
