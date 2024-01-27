@@ -118,4 +118,7 @@ body {
         overflow: visible;
         padding: 40px 15px 15px 15px;
     }
+    .logo {
+        margin-left: 33%;
+    }
 }
