@@ -48,7 +48,7 @@
                             <td data-label="Username">{{payIb.userName}}</td>
 
                             <td data-label="Amount">{{payIb.amount}}$</td>
-                            <td data-label="Amount">{{payIb.amount * 80}}Rs.</td>
+                           <td data-label="Amount">{{(payIb.amount * 80).toFixed(3)}}Rs.</td>
                             <td data-label="Date">{{payIb.date}}</td>
 
                             <td data-label="Status">
@@ -109,7 +109,7 @@
                                 <td data-label="Username">{{payUpi.userName}}</td>
 
                                 <td data-label="Amount">{{payUpi.amount}}$</td>
-                                <td data-label="Amount">{{payUpi.amount * 80}} Rs.</td>
+                                <td data-label="Amount">{{(payUpi.amount * 80).toFixed(3)}} Rs.</td>
                                 <td data-label="Date">{{payUpi.date}}</td>
 
                                 <td data-label="Status">
