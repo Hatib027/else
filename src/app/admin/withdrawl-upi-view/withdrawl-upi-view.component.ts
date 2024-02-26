@@ -43,7 +43,7 @@ export class WithdrawlUpiViewComponent implements OnInit {
             // console.log(data);
 
             this.investmentMaster = data;
-            this.totalAmount = this.investmentMaster.currentInvestment + this.investmentMaster.referralAmount + this.investmentMaster.currentProfit;
+            this.totalAmount = (this.investmentMaster.currentInvestment + this.investmentMaster.referralAmount + this.investmentMaster.currentProfit).toFixed(3);
 
           },
           (error: any) => {
