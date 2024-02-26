@@ -45,7 +45,7 @@ export class WithdrawlIbViewComponent implements OnInit {
 
 
             this.investmentMaster = data;
-            this.totalAmount = this.investmentMaster.currentInvestment + this.investmentMaster.referralAmount + this.investmentMaster.currentProfit;
+            this.totalAmount = (this.investmentMaster.currentInvestment + this.investmentMaster.referralAmount + this.investmentMaster.currentProfit).toFixed(3);
 
           },
           (error: any) => {
